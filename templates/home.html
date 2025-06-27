@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Hub</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Game Hub</h1>
+    <div class="home-buttons">
+      <button onclick="location.href='{{ url_for('fifty_game') }}'">
+        Play Fifty Most Common English Words
+      </button>
+      <button onclick="location.href='{{ url_for('two_hundred_game') }}'">
+        Play Two Hundred Most Common English Words
+      </button>
+    </div>
+  </div>
+</body>
+</html>

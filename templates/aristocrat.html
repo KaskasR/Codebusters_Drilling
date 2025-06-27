@@ -1,0 +1,26 @@
+<!-- templates/aristocrat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ game_title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script>
+    const API_PREFIX = "{{ api_prefix }}";
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>{{ game_title }}</h1>
+    <div id="cipher" class="cipher-row"></div>
+    <input id="guess" type="text" placeholder="Your guess…" />
+    <div class="buttons">
+      <button onclick="submitGuess()">Submit</button>
+      <button onclick="skipGuess()">Skip</button>
+      <button onclick="location.href='{{ url_for('home') }}'">Home</button>
+    </div>
+    <div id="feedback" class="feedback"></div>
+  </div>
+  <script src="{{ url_for('static', filename='js/aristocrat.js') }}"></script>
+</body>
+</html>
