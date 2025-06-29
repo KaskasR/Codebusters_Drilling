@@ -15,12 +15,24 @@
     <div id="cipher" class="cipher-row"></div>
     <input id="guess" type="text" placeholder="Your guess…" />
     <div class="buttons">
-      <button onclick="submitGuess()">Submit</button>
-      <button onclick="skipGuess()">Skip</button>
+      <button onclick="submitGuess()" id="submitGuess">Submit</button>
+      <button onclick="skipGuess()" id="skipGuess">Skip</button>
       <button onclick="location.href='{{ url_for('home') }}'">Home</button>
     </div>
     <div id="feedback" class="feedback"></div>
   </div>
   <script src="{{ url_for('static', filename='js/aristocrat.js') }}"></script>
+  <script>
+    const inputField = document.getElementById('guess');
+    inputField.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            submitGuess()
+        }
+      if (event.key === 'Tab') {
+            submitGuess()
+        }
+    });
+
+</script>
 </body>
 </html>
